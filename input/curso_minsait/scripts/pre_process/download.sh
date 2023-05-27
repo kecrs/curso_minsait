@@ -2,8 +2,9 @@
 #!/bin/bash
 
 curl "https://api.github.com/repos/caiuafranca/dados_curso/contents/"|jq -r '.[].name' > ../../../files_list
+cd ../../raw
 
-cat ../../../files_list | while read line
+cat ../../files_list | while read line
 do
     nome="$(cut -d'.' -f 1 <<< $line)"
     echo $nome
