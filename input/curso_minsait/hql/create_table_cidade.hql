@@ -8,7 +8,7 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '|'
 STORED AS TEXTFILE
 location '/datalake/raw/cidade'
-TBLPROPERTIES ("skip.header.line.count"="1");
+TBLPROPERTIES ("skip.header.line.count"="1", "store.charset"="UTF-8", "retrieve.charset"="UTF-8");
 
 ALTER TABLE aula_hive.cidade SET SERDEPROPERTIES ('serialization.encoding'='UTF-8'); 
 
